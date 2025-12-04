@@ -8,7 +8,7 @@ public class ProductRunner {
        * ✅ Call the getPrice() method and print the result.
        * -----------------------------------------------------------------------------
        */
-       System.out.println(  computer.getPrice() );
+       System.out.println(computer.getPrice() );
        
       
     }

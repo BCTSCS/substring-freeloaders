@@ -29,8 +29,8 @@ public class Product {
        * the method should return "$9.99".
        * -----------------------------------------------------------------------------
        */
-    //  int index= label.indexOf("$");
-      int index= label.length()-7;
+      int index= label.indexOf("$");
+      // int index= label.length()-7;
   
       return  label.substring(index);
     }
