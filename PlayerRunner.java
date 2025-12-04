@@ -8,8 +8,7 @@ public class PlayerRunner {
        * ✅ Call the getScore() method and print the result.
        * -----------------------------------------------------------------------------
        */
-  
-  
+      System.out.println(denise.getScore());
   
       
       
