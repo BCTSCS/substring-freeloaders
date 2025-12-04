@@ -28,7 +28,7 @@ public class Course {
        * code from the courseCode instance variable.
        * -----------------------------------------------------------------------------
        */
-       int index=courseCode.indexOf("-");
+      int index = courseCode.indexOf("-");
       return courseCode.substring(index+1);
     }
     

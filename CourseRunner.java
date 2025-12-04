@@ -10,8 +10,6 @@ public class CourseRunner {
        */
         
        
-      System.out.println(  history.getCourseNumber() );
-      
-      
+      System.out.println(history.getCourseNumber());
     }
   }
