@@ -8,7 +8,7 @@ public  class BlogRunner {
        * ✅ Call the getYear() method and print the result.
        * -----------------------------------------------------------------------------
        */
-      System.out.println( spacePost.getYear());
+      System.out.println(spacePost.getYear());
   
       
       
