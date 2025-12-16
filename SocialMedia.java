@@ -3,13 +3,18 @@ import java.util.ArrayList;
 public class SocialMedia {
     public ArrayList<String> posts;
 
+    /**
+     * Initialize posts from file using FileOperator.readStringData(filename)
+     */
     public SocialMedia(String filename) {
         posts = FileOperator.readStringData(filename);
-        if (posts == null) {
-            posts = new ArrayList<>();
-        }
+        if (posts == null) posts = new ArrayList<>();
     }
 
+    /**
+     * Count hashtags across all posts whose hashtag text length is at least minLength.
+     * Example: '#MachineLearning' counts as length 15 (excluding '#').
+     */
     public int postsWithLength(int minLength) {
         int total = 0;
         for (String post : posts) {
@@ -17,9 +22,8 @@ public class SocialMedia {
             String[] tokens = post.split("\\s+");
             for (String t : tokens) {
                 if (t.startsWith("#") && t.length() > 1) {
-                    // strip trailing punctuation
                     String tag = t.replaceAll("[^#A-Za-z0-9_]", "");
-                    String tagText = tag.substring(1); // without '#'
+                    String tagText = tag.substring(1);
                     if (tagText.length() >= minLength) {
                         total++;
                     }
@@ -29,6 +33,10 @@ public class SocialMedia {
         return total;
     }
 
+    /**
+     * Return all posts that contain the given hashtag. Accepts hashtag with or
+     * without the leading '#'. Matching is a simple contains check.
+     */
     public ArrayList<String> postsWithHashtag(String hashtag) {
         ArrayList<String> result = new ArrayList<>();
         if (hashtag == null || hashtag.isEmpty()) return result;
@@ -42,8 +50,7 @@ public class SocialMedia {
     }
 
     public static void main(String[] args) {
-        String filename = "sample1.txt";
-        SocialMedia sm = new SocialMedia(filename);
+        SocialMedia sm = new SocialMedia("sample1.txt");
         System.out.println("Loaded posts: " + sm.posts.size());
 
         int minLen = 6;
